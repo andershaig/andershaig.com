@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <title>Anders Haig</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,400italic">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.css">
+    <link rel="stylesheet" href="css/app.css"/>
+  </head>
+
+  <body ng-app="starterApp" ng-controller="AppCtrl as ctrl" ng-class="{loaded: loaded}">
+    <header>
+      <div class="letter-wrap">
+        <div class="letter letter-{{letter.cnt}} pos-{{letter.pos}}"
+             ng-class="{active: letter.active}"
+             ng-repeat="letter in ctrl.letters">{{letter.cnt}}</div>
+      </div>
+    </header>
+
+    <main>
+      <div class="work">
+        <h3>{{ctrl.workplaces.current.company}}</h3>
+        <p>{{ctrl.workplaces.current.description}}</p>
+      </div>
+
+      <div class="work" ng-repeat="workplace in ctrl.workplaces.previous">
+        <h3>{{workplace.company}}</h3>
+        <p>{{workplace.description}}</p>
+      </div>
+    </main>
+
+    <footer>
+      Social Links
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/ctrl.js"></script>
+  </body>
+</html>
